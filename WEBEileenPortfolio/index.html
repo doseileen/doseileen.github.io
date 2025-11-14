@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Eileen — Portfolio</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;600&family=Permanent+Marker&family=Special+Elite&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="hero-inner">
+            <div class="tag-left">✦</div>
+            <div class="hero-title">
+                <h1 class="name">Eileen</h1>
+                <p class="subtitle">Visual work</p>
+            </div>
+        </div>
+        <div class="section-break"></div>
+
+        <div class="graffiti">LEEN</div>
+    </header>
+
+    <section class="block block-intro">
+        <div class="container">
+            <h2 class="section-head">About</h2>
+            <p class="lead">
+                Collecting night inspirations, memories from dreams written feelness.
+                Visuals and brand identity.
+            </p>
+            <div class="divider"></div>
+        </div>
+    </section>
+
+    <section class="block block-works">
+        <div class="container">
+            <h2 class="section-head">selected works</h2>
+
+            <div class="grid-wrap">
+                <div id="grid" class="grid">
+
+                    <a class="card" href="works/project01.html">
+                        <figure class="thumb"><img src="images/project01cover.png" alt="Project 01 Cover"></figure>
+                        <div class="meta">
+                            <h3>Project 01</h3>
+                            <p class="cat">LUNAR COSMIC PROJECT-branding design</p>
+                        </div>
+                    </a>
+
+                    <a class="card" href="works/project02.html">
+                        <figure class="thumb"><img src="images/project02cover.png" alt="Project 02 Cover"></figure>
+                        <div class="meta">
+                            <h3>Project 02</h3>
+                            <p class="cat">UFOPIA PROJECT-visual identity design</p>
+                        </div>
+                    </a>
+
+                    <a class="card" href="works/project03.html">
+                        <figure class="thumb"><img src="images/project03cover.png" alt="Project 03 Cover"></figure>
+                        <div class="meta">
+                            <h3>Project 03</h3>
+                            <p class="cat">Digital artwork</p>
+                        </div>
+                    </a>
+
+                    <a class="card" href="works/project04.html">
+                        <figure class="thumb"><img src="images/project04cover.png" alt="Project 04 Cover"></figure>
+                        <div class="meta">
+                            <h3>Project 04</h3>
+                            <p class="cat">Fine art</p>
+                        </div>
+                    </a>
+
+                    <a class="card" href="works/project05.html">
+                        <figure class="thumb"><img src="images/project05cover.png" alt="Project 05 Cover"></figure>
+                        <div class="meta">
+                            <h3>Project 05</h3>
+                            <p class="cat">Editorial design</p>
+                        </div>
+                    </a>
+
+                    <a class="card" href="works/project06.html">
+                        <figure class="thumb"><img src="images/project06cover.png" alt="Project 06 Cover"></figure>
+                        <div class="meta">
+                            <h3>Project 06</h3>
+                            <p class="cat">Packaging design</p>
+                        </div>
+                    </a>
+
+                    <a class="card more-hidden" href="works/project07.html">
+                        <figure class="thumb"><img src="images/project07cover.png" alt="Project 07 Cover"></figure>
+                        <div class="meta">
+                            <h3>Project 07</h3>
+                            <p class="cat">Interactive Design</p>
+                        </div>
+                    </a>
+
+                    <a class="card more-hidden" href="works/project08.html">
+                        <figure class="thumb"><img src="images/project08cover.png" alt="Project 08 Cover"></figure>
+                        <div class="meta">
+                            <h3>Project 08</h3>
+                            <p class="cat">3D Modeling</p>
+                        </div>
+                    </a>
+
+                    <a class="card more-hidden" href="works/project09.html">
+                        <figure class="thumb"><img src="images/project09cover.png" alt="Project 09 Cover"></figure>
+                        <div class="meta">
+                            <h3>Project 09</h3>
+                            <p class="cat">Booklet publications</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="more-control">
+                <button id="moreBtn" class="btn-more" aria-expanded="false">MORE</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-item"><i class="fas fa-envelope"></i><span>Email: doseileen0911@gmail.com</span></div>
+            <div class="footer-item"><i class="fab fa-instagram"></i><span>@lunar.cosmic</span></div>
+            <div class="footer-item"><i class="fab fa-behance"></i><span>https://www.behance.net/eileenlim</span></div>
+        </div>
+    </footer>
+
+    <script>
+        // MORE button toggle
+        const moreBtn = document.getElementById("moreBtn");
+        const hiddenCards = document.querySelectorAll(".more-hidden");
+
+        moreBtn.addEventListener("click", () => {
+            const isOpen = moreBtn.classList.toggle("open");
+
+            hiddenCards.forEach(card => {
+                card.style.display = isOpen ? "block" : "none";
+            });
+
+            moreBtn.textContent = isOpen ? "LESS" : "MORE";
+            moreBtn.setAttribute("aria-expanded", isOpen);
+        });
+
+        // 默认隐藏
+        hiddenCards.forEach(card => card.style.display = "none");
+    </script>
+    <script>
+        // 禁用整个页面的右键菜单
+        document.addEventListener('contextmenu', function (event) {
+            event.preventDefault();
+            alert("This work is protected by copyright and may not be saved as a file."); // 可选：给用户一个提示
+        });
+    </script>
+</body>
+
+</html>
